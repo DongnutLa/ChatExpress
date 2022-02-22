@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>Mira la consola</h1>
+    <script>
+      // Using Socket 2.x
+      //   var socket = io.connect("https://localhost:3000", {
+      //     forceNew: true,
+      //   });
+
+      //   socket.on("mensaje", (data) => {
+      //     console.log(data);
+      //   });
+
+      // Using Socket 4.x
+      const socket = io("ws://localhost:3000");
+
+      // handle the event sent with socket.send()
+      socket.on("message", (data) => {
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>
